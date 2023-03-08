@@ -233,15 +233,15 @@ class LLRBTree {
 
 int main() {
     string sed = "ASEARCHINGEXAMPLE";
-    LLRBTree<char, char> avl;
+    LLRBTree<char, char> ll;
     for (char c : sed)
-        avl.insert(c, c);
-    avl.preorder();
-    avl.inorder();
-    avl.postorder();
-    avl.levelorder();
-    avl['z'] = 'Z';
-    cout<<avl['z']<<"\n";
-    avl.levelorder();
+        ll.insert(c, c);
+    ll.preorder();
+    ll.inorder();
+    ll.postorder();
+    ll.levelorder();
+    ll['z'] = 'Z';
+    cout<<ll['z']<<"\n";
+    ll.levelorder();
     return 0;
 }
