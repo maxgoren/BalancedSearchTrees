@@ -95,4 +95,13 @@ class LLRBTree {
             visit(root);
             cout<<endl;
         }
+        bool contains(T key) {
+            node* x = root;
+            while (x != nullptr) {
+                if (key == x->key)
+                    return true;
+                x = (key < x->key) ? x->left:x->right;
+            }
+            return false;
+        }
 };

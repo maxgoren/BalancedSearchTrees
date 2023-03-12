@@ -51,6 +51,12 @@ class AVL_Rec {
         }
         return h;
     }
+    bool find(node* h, T key) {
+        if (h == nullptr) return false;
+        if (h->key == key) return true;
+        if (key < h->key) return find(h->l, key);
+        else return find(h->r, key);
+    }
     node* root;
     public:
     AVL_Rec() {
@@ -58,5 +64,8 @@ class AVL_Rec {
     }
     void insert(T key, T2 val) {
         root = put(root, key, val);
+    }
+    bool contains(T key) {
+        return find(root, key);
     }
 };

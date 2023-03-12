@@ -1,13 +1,12 @@
 #include <iostream>
 using namespace std;
 
-const bool red = true;
-const bool black = false;
-
 
 template <class Key, class Value>
 class RBTree {
     private:
+        const bool red = true;
+        const bool black = false;
         struct node {
             node* left;
             node* right;
@@ -109,5 +108,14 @@ class RBTree {
         void show() {
             preorder(head->right);
             cout<<endl;
+        }
+        bool contains(Key key) {
+            node* x = head->right;
+            while (x != z) {
+                if (x->key == key)
+                    return true;
+                x = (key < x->key) ? x->left:x->right;
+            }
+            false;
         }
 };

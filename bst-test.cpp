@@ -13,13 +13,28 @@ void avlr(int num) {
     for (int i = 0; i < num; i++) {
         avlr.insert(rand() % 255000, i);
     }
+    int fcnt = 0, mcnt = 0;
+    for (int i = 0; i < num; i++) {
+        if (avlr.contains(rand() % 255000)) fcnt++;
+        else mcnt++;
+    }
+    cout<<"hits: "<<fcnt<<"\n";
+    cout<<"misses: "<<mcnt<<"\n";
 }
+
 void llrbr(int num) {
     cout<<"LLRB (Rec)\n";
     LLRB_Rec<int, int> llrbr;
     for (int i = 0; i < num; i++) {
         llrbr.insert(rand() % 255000, i);
     }
+    int fcnt = 0, mcnt = 0;
+    for (int i = 0; i < num; i++) {
+        if (llrbr.contains(rand() % 255000)) fcnt++;
+        else mcnt++;
+    }
+    cout<<"hits: "<<fcnt<<"\n";
+    cout<<"misses: "<<mcnt<<"\n";
 }
 
 void avl(int num) {
@@ -28,6 +43,13 @@ void avl(int num) {
     for (int i = 0; i < num; i++) {
         avl.insert(rand() % 255000, i);
     }
+    int fcnt = 0, mcnt = 0;
+    for (int i = 0; i < num; i++) {
+        if (avl.contains(rand() % 255000)) fcnt++;
+        else mcnt++;
+    }
+    cout<<"hits: "<<fcnt<<"\n";
+    cout<<"misses: "<<mcnt<<"\n";
 }
 
 void llrb(int num) {
@@ -36,6 +58,13 @@ void llrb(int num) {
     for (int i = 0; i < num; i++) {
         llrb.insert(rand() % 255000, i);
     }
+    int fcnt = 0, mcnt = 0;
+    for (int i = 0; i < num; i++) {
+        if (llrb.contains(rand() % 255000)) fcnt++;
+        else mcnt++;
+    }
+    cout<<"hits: "<<fcnt<<"\n";
+    cout<<"misses: "<<mcnt<<"\n";
 }
 
 void rb(int num) {
@@ -44,6 +73,13 @@ void rb(int num) {
     for (int i = 0; i < num; i++) {
         rb.insert(rand() % 255000, i);
     }
+    int fcnt = 0, mcnt = 0;
+    for (int i = 0; i < num; i++) {
+        if (rb.contains(rand() % 255000)) fcnt++;
+        else mcnt++;
+    }
+    cout<<"hits: "<<fcnt<<"\n";
+    cout<<"misses: "<<mcnt<<"\n";
 }
 
 void stdmap(int num) {
@@ -52,6 +88,13 @@ void stdmap(int num) {
     for (int i = 0; i < num; i++) {
         stl.insert(make_pair(rand() % 255000, i));
     }
+        int fcnt = 0, mcnt = 0;
+    for (int i = 0; i < num; i++) {
+        if (stl.find(rand() % 255000) == stl.end()) mcnt++;
+        else fcnt++;
+    }
+    cout<<"hits: "<<fcnt<<"\n";
+    cout<<"misses: "<<mcnt<<"\n";
 }
 
 int main(int argc, char** argv) {

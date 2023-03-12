@@ -41,6 +41,12 @@ class LLRB_Rec {
         if (isRed(h->r) && isRed(h->l)) h = colorFlip(h);
         return h;
     }
+    bool find(node* h, T key) {
+        if (h == nullptr) return false;
+        if (h->key == key) return true;
+        if (key < h->key) return find(h->l, key);
+        else return find(h->r, key);
+    }
     node* root;
     public:
     LLRB_Rec() {
@@ -49,5 +55,8 @@ class LLRB_Rec {
     void insert(T key, T2 val) {
         root = put(root, key, val);
         root->color = false;
+    }
+    bool contains(T key) {
+        return find(root, key);
     }
 };
